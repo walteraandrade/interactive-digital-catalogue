@@ -83,16 +83,18 @@ const useCartStore = create<CartState>()(
         
         const itemsList = items
           .map(item => 
-            `• ${item.name}\\n` +
-            `  Ø${item.diameter} × ${item.length}mm - ${item.surface}\\n` +
-            `  Código: ${item.code} | Qty: ${item.quantity}`
+            `*Produto:* ${item.name}\n` +
+            `*Medidas:* Ø${item.diameter} × ${item.length}mm\n` +
+            `*Superfície:* ${item.surface}\n` +
+            `*Código:* ${item.code}\n` +
+            `*Quantidade:* ${item.quantity}`
           )
-          .join('\\n\\n');
+          .join('\n\n');
           
         return encodeURIComponent(
-          `Olá! Gostaria de fazer o seguinte pedido:\\n\\n${itemsList}\\n\\n` +
-          `Total de itens: ${get().getTotalItems()}\\n\\n` +
-          `Aguardo retorno com disponibilidade e valores.\\n\\nObrigado!`
+          `Olá! Gostaria de fazer o seguinte pedido:\n\n${itemsList}\n\n` +
+          `*Total de itens:* ${get().getTotalItems()}\n\n` +
+          `Aguardo retorno com disponibilidade e valores.\n\nObrigado!`
         );
       }
     }),
