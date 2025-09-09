@@ -46,7 +46,7 @@ const CartSidebar: React.FC = () => {
         lg:max-w-sm
         overflow-y-scroll
       `}>
-        <div className="cart-header flex items-center justify-between p-4 border-b">
+        <div className="cart-header flex items-center justify-between p-4">
           <h2 className="text-lg font-semibold text-gray-900">
             Carrinho ({getTotalItems()})
           </h2>
@@ -58,6 +58,7 @@ const CartSidebar: React.FC = () => {
             <XIcon className="w-6 h-6 text-gray-500" />
           </button>
         </div>
+        <div className='border-b border w-[90%] m-auto' />
         
         <div className="cart-content flex-1 overflow-y-auto">
           {items.length === 0 ? (
