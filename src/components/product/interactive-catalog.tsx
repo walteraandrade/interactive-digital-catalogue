@@ -31,7 +31,7 @@ const InteractiveCatalog: React.FC<InteractiveCatalogProps> = ({ productId = 'im
       <div className="relative">
         <img
           ref={imageRef}
-          src={`/src/assets/images/${product.image}`}
+          src={`/assets/images/${product.image}`}
           alt={`${product.name} - Catálogo interativo`}
           className={`w-full h-auto rounded-lg shadow-lg transition-opacity duration-300 ${
             imageLoaded ? 'opacity-100' : 'opacity-0'
