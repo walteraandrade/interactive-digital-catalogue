@@ -66,7 +66,6 @@ const Hotspot: React.FC<HotspotProps> = ({
             <div className="font-semibold">{productData.name}</div>
             <div>Ø{productData.diameter} × {productData.length}mm</div>
             <div>{productData.surface}</div>
-            <div className="text-gray-300 text-xs">Cód: {productData.code}</div>
             
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
           </div>

@@ -24,7 +24,6 @@ const CartItemComponent: React.FC<CartItemProps> = ({ item }) => {
           <div className="text-sm text-gray-600 mt-1">
             <div>Ø{item.diameter} × {item.length}mm</div>
             <div>{item.surface}</div>
-            <div className="text-xs text-gray-500">Cód: {item.code}</div>
           </div>
         </div>
         

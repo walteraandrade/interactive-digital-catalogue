@@ -30,7 +30,6 @@ const ProductVariation: React.FC<ProductVariationProps> = ({ length, diameter, s
     <div className="flex items-center bg-[#EAEAEA]/50 p-2 rounded-sm justify-between">
       <div>
         <p className="font-semibold">{`Ø ${diameter} x ${length} mm`}</p>
-        <p className="text-sm text-gray-500">{`Cód: ${productData.code}`}</p>
       </div>
       <button
         onClick={handleClick}
