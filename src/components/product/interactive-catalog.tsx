@@ -1,8 +1,6 @@
 import React, { useState, useRef } from 'react';
-import Hotspot from './hotspot';
-import { getHotspotsForProduct } from '../../data/hotspots';
 import { products } from '../../data/products';
-import useResponsive from '../../hooks/use-responsive';
+import InteractiveSelection from './interactive-selection/InteractiveSelection';
 
 interface InteractiveCatalogProps {
   productId?: string;
@@ -11,10 +9,8 @@ interface InteractiveCatalogProps {
 const InteractiveCatalog: React.FC<InteractiveCatalogProps> = ({ productId = 'implante-torq' }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const imageRef = useRef<HTMLImageElement>(null);
-  const { isMobile } = useResponsive();
   
   const product = products.find(p => p.id === productId);
-  const hotspots = getHotspotsForProduct(productId);
   
   if (!product) {
     return <div className="text-center text-red-500">Produto não encontrado</div>;
@@ -39,19 +35,7 @@ const InteractiveCatalog: React.FC<InteractiveCatalogProps> = ({ productId = 'im
           onLoad={() => setImageLoaded(true)}
           draggable={false}
         />
-        
-        {imageLoaded && (
-          <div className="hotspot-overlay absolute inset-0">
-            {hotspots.map((hotspot) => (
-              <Hotspot
-                key={hotspot.code}
-                code={hotspot.code}
-                position={hotspot.position}
-                showIcon={isMobile}
-              />
-            ))}
-          </div>
-        )}
+          <InteractiveSelection />
       </div>
     </div>
   );
