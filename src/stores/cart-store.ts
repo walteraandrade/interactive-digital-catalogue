@@ -78,7 +78,6 @@ const useCartStore = create<CartState>()(
       
       getWhatsAppMessage: () => {
         const items = get().items;
-        const company = import.meta.env.VITE_COMPANY_NAME || 'Dental Company';
         
         if (items.length === 0) return '';
         
@@ -100,7 +99,7 @@ const useCartStore = create<CartState>()(
     {
       name: 'dental-cart-storage',
       partialize: (state) => ({ items: state.items }),
-      onRehydrateStorage: () => (state, error) => {
+      onRehydrateStorage: () => (_, error) => {
         if (error) {
           console.error('Cart rehydration failed:', error);
         }

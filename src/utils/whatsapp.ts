@@ -1,5 +1,5 @@
 import { WHATSAPP_NUMBER } from './constants';
-import type { CartItem } from '../stores/cartStore';
+import type { CartItem } from '../stores/cart-store';
 
 export const openWhatsApp = (message: string): void => {
   if (!message) {
@@ -22,7 +22,7 @@ export const openWhatsApp = (message: string): void => {
   }
 };
 
-export const formatWhatsAppMessage = (items: CartItem[], companyName: string): string => {
+export const formatWhatsAppMessage = (items: CartItem[]): string => {
   if (!items || items.length === 0) return '';
   
   const header = `Olá! Gostaria de fazer o seguinte pedido:`;
