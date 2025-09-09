@@ -35,21 +35,21 @@ const Header: React.FC = () => {
   );
 };
 
+
 const CartIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg 
-    className={className} 
-    fill="none" 
-    stroke="currentColor" 
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
-      strokeWidth={2} 
-      d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6.5-5v5a2 2 0 01-2 2H9a2 2 0 01-2-2v-5m8 0v5" 
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M3 3h2l.75 4.5m0 0H20l-2.5 7.5H7.5m-1.75-7.5l1.75 7.5m0 0a2.25 2.25 0 104.5 0m-4.5 0h4.5m0 0a2.25 2.25 0 104.5 0h-4.5z"
     />
   </svg>
 );
-
 export default Header;

@@ -23,7 +23,7 @@ const ProductVariation: React.FC<ProductVariationProps> = ({ length, diameter, s
 
   const handleClick = () => {
     addItem(productData);
-    toast.success(`${productData.name} adicionado ao carrinho!`);
+    toast.success(`${productData.name}:${productData.diameter}x${productData.length}mm adicionado ao carrinho!`);
   };
 
   return (

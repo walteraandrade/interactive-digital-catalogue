@@ -1,7 +1,8 @@
 import { Toaster } from 'react-hot-toast';
+import CartSidebar from './components/cart/cart-sidebar';
+import CallToAction from './components/layout/call-to-action';
 import Header from './components/layout/header';
 import InteractiveCatalog from './components/product/interactive-catalog';
-import CartSidebar from './components/cart/cart-sidebar';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         </div>
         
         <InteractiveCatalog />
+        <CallToAction />
       </main>
       
       <CartSidebar />
@@ -26,7 +28,7 @@ function App() {
       <Toaster
         position="bottom-center"
         toastOptions={{
-          duration: 2000,
+          duration: 3000,
           style: {
             background: '#363636',
             color: '#fff',
