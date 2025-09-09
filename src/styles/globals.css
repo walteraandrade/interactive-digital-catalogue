@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-dental-blue: #1e40af;
+  --color-dental-gray: #64748b;
+  
+  --breakpoint-xs: 475px;
+  
+  --animate-fade-in: fade-in 0.2s ease-in-out;
+  --animate-slide-in: slide-in 0.3s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@layer components {
+  .hotspot {
+    @apply relative z-10 cursor-pointer transition-all duration-200;
+  }
+
+  .hotspot-with-icon {
+    @apply flex items-center justify-center;
+  }
+
+  .hotspot-invisible {
+    @apply bg-transparent;
+  }
+
+  .hotspot-icon {
+    @apply text-white shadow-lg;
+    @apply transform transition-transform hover:scale-110 bg-transparent;
+  }
+
+  .hotspot-tooltip {
+    @apply absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-20;
+    @apply bg-gray-900 text-white text-sm rounded-lg px-3 py-2 shadow-lg whitespace-nowrap;
+  }
+
+  .hotspot-tooltip::after {
+    @apply absolute top-full left-1/2 transform -translate-x-1/2;
+    @apply border-4 border-transparent border-t-gray-900;
+    content: '';
+  }
+
+  .cart-sidebar {
+    @apply fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-xl z-50;
+    @apply transform transition-transform duration-300 ease-in-out;
+  }
+
+  .cart-open {
+    @apply translate-x-0;
+  }
+
+  .cart-closed {
+    @apply translate-x-full;
+  }
+}
+
+@layer utilities {
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
